@@ -9,25 +9,28 @@ const MovieCard = ({
   movie_release_date,
   id,
 }) => {
+  var randomColor = Math.floor(Math.random() * 16777215).toString(16);
   return (
     <div className="col">
       <div className="card shadow-sm">
-        <svg
-          className="bd-placeholder-img card-img-top"
-          width="100%"
-          height="225"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="Placeholder: Thumbnail"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-        >
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#55595c"></rect>
-          <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-            {movie_name}
-          </text>
-        </svg>
+        <Link to={`/view/?id=${id}`}>
+          <svg
+            className="bd-placeholder-img card-img-top"
+            width="100%"
+            height="225"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Placeholder: Thumbnail"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+          >
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill={`#${randomColor}`}></rect>
+            <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+              {movie_name}
+            </text>
+          </svg>
+        </Link>
 
         <div className="card-body">
           <p className="card-text">

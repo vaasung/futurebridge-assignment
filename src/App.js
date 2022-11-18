@@ -17,10 +17,10 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <RouterProvider router={router} />
-    </div>
+    </>
   );
 }
 

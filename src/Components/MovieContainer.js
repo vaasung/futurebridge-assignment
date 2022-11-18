@@ -8,7 +8,7 @@ const MovieContainer = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch('http://localhost:4000/movie/getMovie').then(async (resp) => {
+    fetch('https://jwt-demo-rose.vercel.app/movie/getMovie').then(async (resp) => {
       const { status, message, data } = await resp.json();
       setMovieData(data);
       setIsLoading(false);
@@ -20,7 +20,6 @@ const MovieContainer = () => {
   return (
     <div className="container">
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {console.log({ movieData })}
         {movieData?.map((movie) => (
           <MovieCard
             key={movie?.id}
