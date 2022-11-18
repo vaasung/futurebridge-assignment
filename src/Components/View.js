@@ -11,7 +11,7 @@ const ViewMovie = () => {
     setIsLoading(true);
     fetch(`https://jwt-demo-rose.vercel.app/movie/getMovie/?id=${id}`).then(
       async (resp) => {
-        const { status, message, data } = await resp.json();
+        const { data } = await resp.json();
         setMovieData(data[0]);
         setIsLoading(false);
       }

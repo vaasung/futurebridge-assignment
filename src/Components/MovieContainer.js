@@ -8,11 +8,13 @@ const MovieContainer = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch('https://jwt-demo-rose.vercel.app/movie/getMovie').then(async (resp) => {
-      const { status, message, data } = await resp.json();
-      setMovieData(data);
-      setIsLoading(false);
-    });
+    fetch('https://jwt-demo-rose.vercel.app/movie/getMovie').then(
+      async (resp) => {
+        const { data } = await resp.json();
+        setMovieData(data);
+        setIsLoading(false);
+      }
+    );
   }, []);
   if (loading) {
     return <Loader />;
